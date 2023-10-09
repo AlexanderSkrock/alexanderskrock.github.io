@@ -20,10 +20,7 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
-          path: |
-            build
-            !build/**/*.md
+          path: build
 
   # Deploy job
   deploy:
