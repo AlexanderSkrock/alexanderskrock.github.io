@@ -20,7 +20,6 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: build-without-markdown
           path: |
             build
             !build/**/*.md
