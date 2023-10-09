@@ -1,5 +1,5 @@
 import React from 'react';
-import { grommet, Grommet, Page, PageContent, PageHeader, Text } from 'grommet';
+import { grommet, Grommet, Page, PageContent, PageHeader } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 
 const theme = deepMerge(grommet, {
