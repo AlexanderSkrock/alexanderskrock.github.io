@@ -4,6 +4,7 @@ import App from './App';
 
 test('renders under construction info', () => {
   render(<App />);
-  const textElement = screen.getByText(/under construction!/i);
-  expect(textElement).toBeInTheDocument();
+  const elements = screen.getAllByAltText(/maintenance/i);
+  expect(elements).toHaveLength(1);
+  expect(elements[0]).toBeInTheDocument();
 });

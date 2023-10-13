@@ -1,6 +1,8 @@
 import React from 'react';
-import { grommet, Grommet, Page, PageContent, PageHeader } from 'grommet';
+import { grommet, Grommet } from 'grommet';
 import { deepMerge } from 'grommet/utils';
+
+import MaintenancePage from "./maintenance/MaintenancePage";
 
 const theme = deepMerge(grommet, {
   global: {
@@ -15,16 +17,10 @@ const theme = deepMerge(grommet, {
   },
 });
 
-function App() {
-  return (
-    <Grommet theme={ theme } full>
-      <Page>
-        <PageContent>
-          <PageHeader title="Under construction!" />
-        </PageContent>
-      </Page>
-    </Grommet>
-  );
-}
+const App = () => (
+  <Grommet theme={ theme } full>
+    <MaintenancePage/>
+  </Grommet>
+);
 
 export default App;
