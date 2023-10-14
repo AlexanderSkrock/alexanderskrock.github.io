@@ -1,26 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import { Anchor, grommet, Grommet, Header, Nav } from 'grommet';
-import { deepMerge } from 'grommet/utils';
+import { Anchor, Grommet, Header, Main, Nav } from 'grommet';
 import { Certificate, HomeRounded, Projects, Contact } from "grommet-icons";
 
-const theme = deepMerge(grommet, {
-    global: {
-        colors: {
-            brand: '#228BE6',
-        },
-        font: {
-            family: 'Roboto',
-            size: '18px',
-            height: '20px',
-        },
-    },
-});
+import theme from "./theme";
 
 const Root = () => (
-    <Grommet theme={ theme } full>
-        <Header>
+    <Grommet theme={ theme }>
+        <Header sticky="scrollup">
             <Nav direction="row" background="brand" pad="medium">
                 <Anchor href="/" icon={ <HomeRounded />} hoverIndicator />
                 <Anchor href="/projects" icon={ <Projects />} hoverIndicator />
@@ -28,7 +16,9 @@ const Root = () => (
                 <Anchor href="/contact" icon={ <Contact /> } hoverIndicator />
             </Nav>
         </Header>
-        <Outlet />
+        <Main>
+            <Outlet />
+        </Main>
     </Grommet>
 );
 
