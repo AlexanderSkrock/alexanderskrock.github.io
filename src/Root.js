@@ -9,7 +9,7 @@ import theme from "./theme";
 const Root = () => (
     <Grommet theme={ theme }>
         <Header sticky="scrollup">
-            <Nav direction="row" background="brand" pad="medium">
+            <Nav direction="row" fill="horizontal" justify="around" pad="small" background="brand">
                 <Anchor href="/" icon={ <HomeRounded />} hoverIndicator />
                 <Anchor href="/projects" icon={ <Projects />} hoverIndicator />
                 <Anchor href="/knowledge" icon={ <Certificate /> } hoverIndicator />
