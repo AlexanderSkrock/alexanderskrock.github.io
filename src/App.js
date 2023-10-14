@@ -1,26 +1,19 @@
 import React from 'react';
-import { grommet, Grommet } from 'grommet';
-import { deepMerge } from 'grommet/utils';
+import { Route, Routes } from "react-router-dom";
 
+import Root from "./Root"
 import MaintenancePage from "./maintenance/MaintenancePage";
 
-const theme = deepMerge(grommet, {
-  global: {
-    colors: {
-      brand: '#228BE6',
-    },
-    font: {
-      family: 'Roboto',
-      size: '18px',
-      height: '20px',
-    },
-  },
-});
-
 const App = () => (
-  <Grommet theme={ theme } full>
-    <MaintenancePage/>
-  </Grommet>
+  <Routes>
+    <Route element={ <Root /> }>
+      <Route index element={ <MaintenancePage /> } />
+      <Route path="projects" element={ <MaintenancePage /> } />
+      <Route path="knowledge" element={ <MaintenancePage /> } />
+      <Route path="contact" element={ <MaintenancePage /> } />
+      <Route path="*" element={ <MaintenancePage /> } />
+    </Route>
+  </Routes>
 );
 
 export default App;
