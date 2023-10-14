@@ -6,11 +6,12 @@ import MaintenancePage from "./maintenance/MaintenancePage";
 
 const App = () => (
   <Routes>
-    <Route Component={ Root }>
-      <Route path="projects" Component={ MaintenancePage } />
-      <Route path="knowledge" Component={ MaintenancePage } />
-      <Route path="contact" Component={ MaintenancePage } />
-      <Route index Component={ MaintenancePage } />
+    <Route element={ <Root /> }>
+      <Route index element={ <MaintenancePage /> } />
+      <Route path="projects" element={ <MaintenancePage /> } />
+      <Route path="knowledge" element={ <MaintenancePage /> } />
+      <Route path="contact" element={ <MaintenancePage /> } />
+      <Route path="*" element={ <MaintenancePage /> } />
     </Route>
   </Routes>
 );
