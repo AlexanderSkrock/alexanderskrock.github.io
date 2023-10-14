@@ -13,6 +13,18 @@ const router = createBrowserRouter([
         index: true,
         Component: MaintenancePage,
       },
+      {
+        path: "projects",
+        Component: MaintenancePage,
+      },
+      {
+        path: "knowledge",
+        Component: MaintenancePage,
+      },
+      {
+        path: "contact",
+        Component: MaintenancePage,
+      }
     ],
   },
 ]);
