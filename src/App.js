@@ -1,34 +1,19 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Root from "./Root"
 import MaintenancePage from "./maintenance/MaintenancePage";
+import { Projects } from 'grommet-icons';
 
-
-const router = createBrowserRouter([
-  {
-    Component: Root,
-    children: [
-      {
-        index: true,
-        Component: MaintenancePage,
-      },
-      {
-        path: "projects",
-        Component: MaintenancePage,
-      },
-      {
-        path: "knowledge",
-        Component: MaintenancePage,
-      },
-      {
-        path: "contact",
-        Component: MaintenancePage,
-      }
-    ],
-  },
-]);
-
-const App = () => <RouterProvider router={router} />;
+const App = () => (
+  <Routes>
+    <Route Component={ Root }>
+      <Route path="projects" Component={ Projects } />
+      <Route path="knowledge" Component={ MaintenancePage } />
+      <Route path="contact" Component={ MaintenancePage } />
+      <Route index Component={ MaintenancePage } />
+    </Route>
+  </Routes>
+);
 
 export default App;
