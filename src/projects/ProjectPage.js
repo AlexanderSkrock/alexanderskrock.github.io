@@ -1,17 +1,18 @@
 import React from "react";
-import { Box, Button, Card, CardBody, CardHeader, CardFooter, Grid, Page, PageContent } from "grommet";
-import { Github } from "grommet-icons";
+import { Box, Button, Card, CardBody, CardHeader, CardFooter, Grid, Page, PageContent, Heading } from "grommet";
+import { Github, Link } from "grommet-icons";
 
-const professionalProjects = ["X-OUT", "TOBI"];
-const maintainerProjects = ["Camunda Modeler Provisioner"];
-const contributorProjects = ["rewrite"];
+import professionalProjects from "./professionalProjects";
+import maintainerProjects from "./maintainerProjects";
+import contributorProjects from "./contributorProjects";
 
-const toCard = project => (
+const toCard = ({ name, description, github, link }) => (
     <Card>
-        <CardHeader pad="medium">{ project }</CardHeader>
-        <CardBody pad="medium">{ project }</CardBody>
+        <CardHeader pad="medium">{ name }</CardHeader>
+        <CardBody pad="medium">{ description }</CardBody>
         <CardFooter pad={{horizontal: "small"}} background="light-2">
-            <Button icon={<Github color="plain" />} hoverIndicator />
+            { link ? <Button icon={<Link color="plain" />} href={ link } hoverIndicator /> : null }
+            { github ? <Button icon={<Github color="plain" />} href={ github } hoverIndicator /> : null }
         </CardFooter>
     </Card>
 );
@@ -20,7 +21,7 @@ const ProjectPage = () => (
     <Page>
         <PageContent>
             <Grid
-                rows={['flex', 'flex']}
+                rows={['auto', 'auto']}
                 columns={['1/2', '1/2']}
                 gap="small"
                 areas={[
@@ -28,13 +29,16 @@ const ProjectPage = () => (
                     { name: 'maintainer', start: [1, 0], end: [1, 0] },
                     { name: 'contributor', start: [1, 1], end: [1, 1] },
                 ]}>
-                <Box gridArea="professional" background="brand" pad="small" gap="small">
+                <Box gridArea="professional" pad="small" gap="small">
+                    <Heading>Professional</Heading>
                     { professionalProjects.map(toCard) }
                 </Box>
-                <Box gridArea="maintainer" background="light-5" pad="small" gap="small">
+                <Box gridArea="maintainer" pad="small" gap="small">
+                    <Heading>Maintainer</Heading>
                     { maintainerProjects.map(toCard) }
                 </Box>
-                <Box gridArea="contributor" background="light-2" pad="small" gap="small">
+                <Box gridArea="contributor" pad="small" gap="small">
+                    <Heading>Contributor</Heading>
                     { contributorProjects.map(toCard) }
                 </Box>
             </Grid>
