@@ -25,26 +25,22 @@ const getHeader = ({ icon, name }) => icon
  )
  : <Text weight="bold"> { name } </Text>;
 
- const getBody = ({ description }) => (
-    <Paragraph maxLines="5">
-        { description }
-    </Paragraph>
- );
+ const getBody = ({ description }) => typeof description === 'string' || description instanceof String
+    ? (
+        <Paragraph maxLines="5">
+            { description }
+        </Paragraph>
+    )
+    : description;
 
  const getLinks = ({ links }) => {
     if (!links || links.length < 1) {
         return null;
     }
-    return (
-        <Box direction="row">
-            {
-                links.map(({ icon, url }) => {
-                    const IconComponent = icon || Link;
-                    return <Button icon={ <IconComponent color="plain" /> } href={ url } hoverIndicator />;
-                })
-            }      
-        </Box>
-    );
+    return links.map((link, idx) => {
+        const IconComponent = link.icon || Link;
+        return <Button key={ `link_${idx}` } icon={ <IconComponent color="plain" /> } href={ link.url || link } hoverIndicator />;
+    });
  }
 
 const GenericProjectCard = ({ size, project }) => (
@@ -56,7 +52,9 @@ const GenericProjectCard = ({ size, project }) => (
             { getBody(project) }
         </CardBody>
         <CardFooter pad={{horizontal: "small"}} background="light-2">
-            { getLinks(project) }
+            <Box direction="row" align="end">
+                { getLinks(project) }
+            </Box>
         </CardFooter>
     </Card>
 );
