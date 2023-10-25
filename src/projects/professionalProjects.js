@@ -1,11 +1,25 @@
-const professionalProjects = [
+import { Avatar, Box, Text } from "grommet";
+
+import XOutIcon from "./xout.svg";
+
+const professionalProjects = [    
     {
-        name: "X-OUT",
+        name: (
+            <Box direction="row" gap="small" align="center">
+              <Avatar src={ XOutIcon } />
+              <Text weight="bold">X-OUT</Text>
+            </Box>
+        ),
         description: <span>TODO</span>,
         link: "https://www.x-out.de/"
     },
     {
-        name: "X-OUT Web TOBI",
+        name: (
+            <Box direction="row" gap="small" align="center">
+              <Avatar src={ XOutIcon } />
+              <Text weight="bold">X-OUT Web TOBI</Text>
+            </Box>
+        ),
         description: <span>TODO</span>,
         link: "https://www.x-out.de/"
     }
