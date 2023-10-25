@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Avatar, Box, Text } from "grommet";
+import { Avatar, Box, Paragraph, Text } from "grommet";
 
 import LoadingProjectCard from "./LoadingProjectCard";
 import GenericProjectCard from "./GenericProjectCard";
@@ -23,7 +23,7 @@ const loadGithubProject = (project) => {
           <Text weight="bold"> { json.full_name } </Text>
         </Box>
       ),
-      description: <Text>{json.description}</Text>,
+      description: <Paragraph>{json.description}</Paragraph>,
       github: json.html_url,
     }));
 }
@@ -37,7 +37,7 @@ const GithubProjectCard = ({ size, project }) => {
         description: (
           <Box direction="row" gap="small" align="center">
             <DocumentMissing color="red" />
-            <Text>Failed to load details from Github</Text>
+            <Paragraph>Failed to load details from Github</Paragraph>
           </Box>
         ),
       }));
