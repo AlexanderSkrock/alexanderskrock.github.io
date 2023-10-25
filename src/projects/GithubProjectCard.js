@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Avatar, Box, Paragraph, Text } from "grommet";
+
+import { DocumentMissing, Github } from "grommet-icons";
 
 import LoadingProjectCard from "./LoadingProjectCard";
 import GenericProjectCard from "./GenericProjectCard";
-import { DocumentMissing } from "grommet-icons";
 
 const githubRepoApiUrl = "https://api.github.com/repos"
 
@@ -17,14 +17,10 @@ const loadGithubProject = (project) => {
       }
     })
     .then(json => ({
-      name: (
-        <Box direction="row" gap="small" align="center">
-          <Avatar src={ json.owner.avatar_url } />
-          <Text weight="bold"> { json.full_name } </Text>
-        </Box>
-      ),
-      description: <Paragraph>{json.description}</Paragraph>,
-      github: json.html_url,
+      icon: json.owner.avatar_url,
+      name: json.full_name,
+      description: json.description,
+      links: [{ icon: Github, url: json.html_url }],
     }));
 }
 
@@ -34,12 +30,9 @@ const GithubProjectCard = ({ size, project }) => {
     if (project.github) {
       loadGithubProject(project).then(setGithubProject).catch(() => setGithubProject({
         ...project,
-        description: (
-          <Box direction="row" gap="small" align="center">
-            <DocumentMissing color="red" />
-            <Paragraph>Failed to load details from Github</Paragraph>
-          </Box>
-        ),
+        icon: <DocumentMissing color="red" />,
+        description: "Failed to load details from Github",
+        links: [{ icon: Github, url: project.github }],
       }));
     } else {
       setGithubProject(project);
