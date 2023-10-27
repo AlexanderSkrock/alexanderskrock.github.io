@@ -30,7 +30,7 @@ const ProjectPage = () => {
     const projects = useMemo(() => [...professionalProjects, ...maintainerProjects, ...contributorProjects], []);
 
     return (
-        <Page kind="full">
+        <Page data-testid="projectsPage" kind="full">
             <PageContent>
                 <Grid pad="small" gap="small" { ...getResponsiveGridProps(size) }>
                     { projects.map((p, i) => <ProjectCard key={ `project_${i}` } project={ p } />) }

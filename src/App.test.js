@@ -30,12 +30,11 @@ test('renders under construction info for root page with slash', () => {
   expect(elements[0]).toBeInTheDocument();
 });
 
-test('renders under construction info for projects page', () => {
+test('renders projects info for projects page', () => {
   renderRoute("/projects");
 
-  const elements = screen.getAllByAltText(/maintenance/i);
-  expect(elements).toHaveLength(1);
-  expect(elements[0]).toBeInTheDocument();
+  const grid = screen.getByTestId("projectsPage");
+  expect(grid).toBeInTheDocument();
 });
 
 test('renders under construction info for knowledge page', () => {
