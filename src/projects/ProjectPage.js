@@ -18,6 +18,10 @@ const getResponsiveGridProps = (size) =>  {
             return {
                 columns: ["1/2", "1/2"],
             };
+        case "large":
+            return {
+                columns: ["1/3", "1/3", "1/3"],
+            };
         default:
             return {
                 columns: ["1/4", "1/4", "1/4", "1/4"],
