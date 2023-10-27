@@ -1,8 +1,10 @@
+import { CAMUNDA_TAG, MAINTAINER_TAG, PERSONAL_TAG } from "./tags";
+
 const maintainerProjects = [
     {
         name: "Camunda Modeler Provisioner",
-        description: <span>TODO</span>,
-        github: "https://github.com/AlexanderSkrock/camunda-modeler-provisioner"
+        github: "https://github.com/AlexanderSkrock/camunda-modeler-provisioner",
+        tags: [ PERSONAL_TAG, MAINTAINER_TAG, CAMUNDA_TAG ]
     }
 ];
 

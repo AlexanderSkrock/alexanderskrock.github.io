@@ -1,20 +1,6 @@
 import React from "react";
-import { Avatar, Box, Button, Card, CardBody, CardHeader, CardFooter, Paragraph, Text } from "grommet";
+import { Avatar, Box, Button, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
 import { Link } from "grommet-icons";
-
-const getResponsiveCardProps = (size) => {
-    switch (size) {
-        case "xsmall":
-        case "small":
-            return {
-                basis: "medium"
-            };
-        default:
-            return {
-                basis: "large"
-            };
-    }
-};
 
 const getHeader = ({ icon, name }) => icon
  ? (
@@ -33,6 +19,15 @@ const getHeader = ({ icon, name }) => icon
     )
     : description;
 
+const getTags = ({ tags }) => {
+    if (!tags || tags.length < 1) {
+        return null;
+    }
+    return tags.map((tag, idx) => {
+        return <Tag key={ `tag_${idx}` } name={ tag } size="small" />;
+    });
+}
+
  const getLinks = ({ links }) => {
     if (!links || links.length < 1) {
         return null;
@@ -43,8 +38,8 @@ const getHeader = ({ icon, name }) => icon
     });
  }
 
-const GenericProjectCard = ({ size, project }) => (
-    <Card { ...getResponsiveCardProps(size) }>
+const GenericProjectCard = ({ project }) => (
+    <Card>
         <CardHeader pad="medium">
             { getHeader(project) }
         </CardHeader>
@@ -52,6 +47,9 @@ const GenericProjectCard = ({ size, project }) => (
             { getBody(project) }
         </CardBody>
         <CardFooter pad={{horizontal: "small"}} background="light-2">
+            <Box direction="row" align="start" pad="small" gap="small">
+                { getTags(project) }
+            </Box>
             <Box direction="row" align="end">
                 { getLinks(project) }
             </Box>

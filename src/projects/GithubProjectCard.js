@@ -21,27 +21,27 @@ const loadGithubProject = (project) => {
       name: json.full_name,
       description: json.description,
       links: [{ icon: Github, url: json.html_url }],
+    })).catch(() => ({
+      ...project,
+      icon: <DocumentMissing color="red" />,
+      description: "Failed to load details from Github",
+      links: [{ icon: Github, url: project.github }],
     }));
 }
 
-const GithubProjectCard = ({ size, project }) => {
+const GithubProjectCard = ({ project }) => {
   const [githubProject, setGithubProject] = useState();
   useEffect(() => {
     if (project.github) {
-      loadGithubProject(project).then(setGithubProject).catch(() => setGithubProject({
-        ...project,
-        icon: <DocumentMissing color="red" />,
-        description: "Failed to load details from Github",
-        links: [{ icon: Github, url: project.github }],
-      }));
+      loadGithubProject(project).then(githubProject => setGithubProject({ ...project, ...githubProject }));
     } else {
       setGithubProject(project);
     }
   }, [project]);
 
   return githubProject
-    ? <GenericProjectCard size={ size } project={ githubProject} />
-    : <LoadingProjectCard size={ size} />;
+    ? <GenericProjectCard project={ githubProject} />
+    : <LoadingProjectCard />;
 }
 
 export default GithubProjectCard;

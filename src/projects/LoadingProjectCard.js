@@ -2,12 +2,12 @@ import { Spinner } from "grommet";
 
 import ProjectCard from "./ProjectCard";
 
-const LoadingProjectCard = ({ size }) => {
+const LoadingProjectCard = () => {
   const project = {
     name: <Spinner />,
     description: <Spinner />
   }
-  return <ProjectCard size={ size } project={ project }/>;
+  return <ProjectCard project={ project }/>;
 };
 
 export default LoadingProjectCard;
