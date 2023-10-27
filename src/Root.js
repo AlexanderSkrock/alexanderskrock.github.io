@@ -16,7 +16,7 @@ const Root = () => (
                 <Anchor href="/contact" icon={ <Contact /> } hoverIndicator />
             </Nav>
         </Header>
-        <Main>
+        <Main background="background">
             <Outlet />
         </Main>
     </Grommet>
