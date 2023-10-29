@@ -1,13 +1,14 @@
 // Scope of project
 export const PERSONAL_TAG = "Personal";
-export const PROFESSIONAL_TAG = "Professional";
 
-// Roles for personal projects
-export const MAINTAINER_TAG = "Maintainer";
-export const CONTRIBUTOR_TAG = "Contributor";
+// Languages
+export const JSON_SCHEMA_TAG = "JSON Schema";
+export const JAVA_TAG = "Java";
+export const JS_TAG = "JavaScript";
 
-// Companies
-export const DATA_EXPERTS_TAG = "data experts gmbh";
-
-// Areas
-export const CAMUNDA_TAG = "Camunda";
+// Framework & Technologies
+export const NODE_TAG = "Node.js";
+export const REACT_TAG = "React";
+export const SPRING_BOOT_TAG = "Spring Boot";
+export const CAMUNDA_7_TAG = "Camunda 7";
+export const CAMUNDA_MODELER_TAG = "Camunda Modeler";

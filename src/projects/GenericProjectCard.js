@@ -24,7 +24,7 @@ const getTags = ({ tags }) => {
         return null;
     }
     return tags.map((tag, idx) => {
-        return <Tag key={ `tag_${idx}` } name={ tag } size="small" />;
+        return <Tag key={ `tag_${idx}` } name={ tag } size="xsmall" />;
     });
 }
 
@@ -47,11 +47,13 @@ const GenericProjectCard = ({ project }) => (
             { getBody(project) }
         </CardBody>
         <CardFooter pad={{horizontal: "small"}} background="light-2">
-            <Box direction="row" align="start" pad="small" gap="small">
-                { getTags(project) }
-            </Box>
-            <Box direction="row" align="end">
-                { getLinks(project) }
+            <Box direction="row" pad="small" justify="between" fill>
+                <Box direction="row" gap="xsmall" wrap>
+                    { getTags(project) }
+                </Box>
+                <Box direction="row" gap="small" align="center">
+                    { getLinks(project) }
+                </Box>
             </Box>
         </CardFooter>
     </Card>
