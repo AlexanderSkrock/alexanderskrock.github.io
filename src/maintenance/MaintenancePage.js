@@ -10,14 +10,12 @@ const ViewSizeImage = styled(Image)`
   max-height: calc(100vh - ${HEADER_HEIGHT});
 `;
 
-const MaintenancePage = () => {
-  return (
-    <Page>
-      <PageContent>
-        <ViewSizeImage src={ MaintenanceImage } alt="Currently down for maintenance!" alignSelf="center" />
-      </PageContent>
-    </Page>
-  );
-}
+const MaintenancePage = () => (
+  <Page>
+    <PageContent>
+      <ViewSizeImage src={ MaintenanceImage } alt="Currently down for maintenance!" alignSelf="center" />
+    </PageContent>
+  </Page>
+);
 
 export default MaintenancePage;

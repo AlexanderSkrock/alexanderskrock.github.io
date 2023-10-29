@@ -11,7 +11,8 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
 clientsClaim();
 
@@ -58,6 +59,19 @@ registerRoute(
       // least-recently used images are removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
+  })
+);
+
+// Cache calls to Github API to prevent rate limiting issues
+registerRoute(
+  new RegExp('^https://api.github.com/'),
+  new CacheFirst({
+    cacheName: 'github-api-cache',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [200],
+      })
+    ]
   })
 );
 
