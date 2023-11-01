@@ -45,12 +45,11 @@ test('renders under construction info for knowledge page', () => {
   expect(elements[0]).toBeInTheDocument();
 });
 
-test('renders under construction info for contact page', () => {
+test('renders contact info for contact page', () => {
   renderRoute("/contact");
 
-  const elements = screen.getAllByAltText(/maintenance/i);
-  expect(elements).toHaveLength(1);
-  expect(elements[0]).toBeInTheDocument();
+  const grid = screen.getByTestId("contactPage");
+  expect(grid).toBeInTheDocument();
 });
 
 test('renders under construction info for unknown page', () => {
