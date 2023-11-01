@@ -7,7 +7,7 @@ import ConstantsContext from "../ConstantsContext";
 const MaintenancePage = () => {
   const { mainHeight } = useContext(ConstantsContext);
   return (
-    <Page height={ { min: mainHeight, max: mainHeight } }>
+    <Page height={ mainHeight }>
       <PageContent>
         <Image src={ MaintenanceImage } alt="Currently down for maintenance!" fit="contain" />
       </PageContent>
