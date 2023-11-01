@@ -17,7 +17,7 @@ const Root = () => {
         if (headerRef) {
             setMainHeight(`calc(100vh - ${headerRef.clientHeight}px)`);
         }
-    });
+    }, []);
 
     return (
         <Grommet theme={ theme }>
