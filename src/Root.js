@@ -28,12 +28,12 @@ const Root = () => {
                     <Anchor href="/knowledge" icon={ <Certificate /> } hoverIndicator />
                     <Anchor href="/contact" icon={ <Contact /> } hoverIndicator />
                 </Nav>
-            </Header>     
-            <ConstantsContext.Provider value={ constants }>
-                <Main background="background">
-                        <Outlet />
-                </Main>
-            </ConstantsContext.Provider>
+            </Header>
+            <Main background="background">
+                <ConstantsContext.Provider value={ constants }>
+                    <Outlet />
+                </ConstantsContext.Provider>
+            </Main>
         </Grommet>
     );
 }
