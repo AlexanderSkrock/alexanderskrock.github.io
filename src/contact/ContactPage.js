@@ -9,7 +9,7 @@ const ContactPage = () => {
     return (
         <Page data-testid="contactPage">
             <PageContent
-                height={ { min: mainHeight, max: mainHeight } }
+                height={ { min: mainHeight } }
                 align="center"
                 justify="around">
                 <Contacts />
