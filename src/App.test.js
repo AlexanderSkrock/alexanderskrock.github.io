@@ -40,9 +40,8 @@ test('renders projects info for projects page', () => {
 test('renders under construction info for knowledge page', () => {
   renderRoute("/knowledge");
 
-  const elements = screen.getAllByAltText(/maintenance/i);
-  expect(elements).toHaveLength(1);
-  expect(elements[0]).toBeInTheDocument();
+  const grid = screen.getByTestId("knowledgePage");
+  expect(grid).toBeInTheDocument();
 });
 
 test('renders contact info for contact page', () => {
