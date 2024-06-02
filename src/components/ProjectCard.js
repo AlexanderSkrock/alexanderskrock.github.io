@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Box, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
 
-import Link from "../../components/Link";
+import Link from "./Link";
 
 const getHeader = ({ icon, name }) => icon
  ? (
