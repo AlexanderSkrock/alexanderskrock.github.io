@@ -37,14 +37,6 @@ test('renders projects info for projects page', () => {
   expect(grid).toBeInTheDocument();
 });
 
-test('renders under construction info for knowledge page', () => {
-  renderRoute("/knowledge");
-
-  const elements = screen.getAllByAltText(/maintenance/i);
-  expect(elements).toHaveLength(1);
-  expect(elements[0]).toBeInTheDocument();
-});
-
 test('renders contact info for contact page', () => {
   renderRoute("/contact");
 
