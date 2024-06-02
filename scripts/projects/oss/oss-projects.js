@@ -1,20 +1,10 @@
-// Scope of project
-const PERSONAL_TAG = "Personal";
-
-// Languages
-const JSON_SCHEMA_TAG = "JSON Schema";
-const JAVA_TAG = "Java";
-const JS_TAG = "JavaScript";
-
-// Framework & Technologies
-const NODE_TAG = "Node.js";
-const CAMUNDA_MODELER_TAG = "Camunda Modeler";
+const { CAMUNDA_MODELER_TAG, NODE_TAG, JAVA_TAG, JS_TAG, JSON_SCHEMA_TAG } = require("../tags");
 
 const maintainerProjects = [
     {
         name: "Camunda Modeler Provisioner",
         github: "https://github.com/AlexanderSkrock/camunda-modeler-provisioner",
-        tags: [ PERSONAL_TAG, CAMUNDA_MODELER_TAG, NODE_TAG ]
+        tags: [ CAMUNDA_MODELER_TAG, NODE_TAG ]
     },
 ]
 

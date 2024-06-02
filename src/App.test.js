@@ -30,6 +30,14 @@ test('renders under construction info for root page with slash', () => {
   expect(elements[0]).toBeInTheDocument();
 });
 
+test('renders business projects info for business page', () => {
+  renderRoute("/business");
+
+  const grid = screen.getByTestId("businessPage");
+  expect(grid).toBeInTheDocument();
+});
+
+
 test('renders oss contributions for oss page', () => {
   renderRoute("/oss");
 
