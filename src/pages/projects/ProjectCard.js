@@ -1,7 +1,7 @@
-import React, { isValidElement } from "react";
-import { Avatar, Box, Button, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
-import * as GrommetIcons from "grommet-icons";
-import { Github, Link } from "grommet-icons";
+import React from "react";
+import { Avatar, Box, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
+
+import Link from "../../components/Link";
 
 const getHeader = ({ icon, name }) => icon
  ? (
@@ -29,28 +29,13 @@ const getTags = ({ tags }) => {
     });
 }
 
-const getLinkIcon = ({ icon, url }) => {
-    if (icon) {
-        if (isValidElement(icon)) {
-            return icon;
-        } else {
-            return GrommetIcons[icon];
-        }
-    }
-    if (url && url.includes("github")) {
-        return Github;
-    }
-    return Link;
-}
-
  const getLinks = ({ links }) => {
     if (!links || links.length < 1) {
         return null;
     }
-    return links.map((link, idx) => {
-        const IconComponent = getLinkIcon(link);
-        return <Button key={ `link_${idx}` } icon={ <IconComponent color="plain" /> } href={ link.url || link } hoverIndicator />;
-    });
+    return links.map((link, idx) => (
+        <Link key={ `link_${idx}` } icon={ link.icon } url={ link.url || link }/>
+    ));
  }
 
 const ProjectCard = ({ project }) => (

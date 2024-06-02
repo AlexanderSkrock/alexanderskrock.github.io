@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Page, PageContent } from "grommet";
 
-import ConstantsContext from "../ConstantsContext";
+import ConstantsContext from "../../ConstantsContext";
 import Contacts from "./Contacts";
 
 const ContactPage = () => {

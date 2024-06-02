@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 
 import Root from "./Root"
-import MaintenancePage from "./maintenance/MaintenancePage";
-import ProjectPage from './projects/ProjectPage';
-import ContactPage from './contact/ContactPage';
+import MaintenancePage from "./pages/maintenance/MaintenancePage";
+import ProjectPage from './pages/projects/ProjectPage';
+import ContactPage from './pages/contact/ContactPage';
 
 const App = () => (
   <Routes>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Grid, Page, PageContent, ResponsiveContext } from "grommet";
 
 import ProjectCard from "./ProjectCard";
-import projects from "../generated/projects.json";
+import projects from "../../generated/projects.json";
 
 const getResponsiveGridProps = (size) =>  {
     switch (size) {
