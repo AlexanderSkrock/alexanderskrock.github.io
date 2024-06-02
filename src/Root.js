@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Anchor, Grommet, Header, Main, Nav } from 'grommet';
-import { Certificate, HomeRounded, Projects, Contact } from "grommet-icons";
+import { HomeRounded, Projects, Contact } from "grommet-icons";
 
 import ConstantsContext from "./ConstantsContext";
 import theme from "./theme";
@@ -25,7 +25,6 @@ const Root = () => {
                 <Nav direction="row" fill="horizontal" justify="around" pad="small" background="brand">
                     <Anchor href="/" icon={ <HomeRounded />} hoverIndicator />
                     <Anchor href="/projects" icon={ <Projects />} hoverIndicator />
-                    <Anchor href="/knowledge" icon={ <Certificate /> } hoverIndicator />
                     <Anchor href="/contact" icon={ <Contact /> } hoverIndicator />
                 </Nav>
             </Header>
