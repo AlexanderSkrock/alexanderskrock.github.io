@@ -1,11 +1,11 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const generateProjectResources = require('./projects/generate-project-resources');
+const generateProjectResources = require('./oss/generate-oss-resources');
 
 function writeToResourceFile(fileName, data) {
     try {
-        const targetFile = path.resolve("src", "generated", fileName);
+        const targetFile = path.resolve("src", "config", "generated", fileName);
         fs.writeFileSync(targetFile, data);
       } catch (err) {
         console.error(err);

@@ -8,27 +8,7 @@ const JS_TAG = "JavaScript";
 
 // Framework & Technologies
 const NODE_TAG = "Node.js";
-const REACT_TAG = "React";
-const SPRING_BOOT_TAG = "Spring Boot";
-const CAMUNDA_7_TAG = "Camunda 7";
 const CAMUNDA_MODELER_TAG = "Camunda Modeler";
-
-const professionalProjects = [
-    {
-        name: "X-OUT",
-        description: "Mit X-OUT werden Sie das unternehmensweite Output Management konsolidieren, vereinfachen, vereinheitlichen.",
-        icon: "/projects/xout.svg",
-        links: [ "https://www.x-out.de/" ],
-        tags: [ JAVA_TAG, SPRING_BOOT_TAG ]
-    },
-    {
-        name: "X-OUT Web TOBI",
-        description: "In Zusammenarbeit mit unseren Kunden haben wir ein Produkt kreiert, das Sie auf unterschiedlichste Art und Weise bei Ihrer Auftragsabwicklung unterstützt.",
-        icon: "/projects/tobi.svg",
-        links: [ "https://www.x-out.de/" ],
-        tags: [ JAVA_TAG, JS_TAG, SPRING_BOOT_TAG, CAMUNDA_7_TAG, REACT_TAG ]
-    }
-]
 
 const maintainerProjects = [
     {
@@ -61,6 +41,6 @@ const contributorProjects = [
     }
 ];
 
-const projects = [ ...professionalProjects, ...maintainerProjects, ...contributorProjects ];
+const projects = [ ...maintainerProjects, ...contributorProjects ];
 
 module.exports = projects;

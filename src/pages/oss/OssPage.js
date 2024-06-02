@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Grid, Page, PageContent, ResponsiveContext } from "grommet";
 
 import ProjectCard from "./ProjectCard";
-import projects from "../../generated/projects.json";
+import projects from "../../config/generated/oss-projects.json";
 
 const getResponsiveGridProps = (size) =>  {
     switch (size) {
@@ -30,7 +30,7 @@ const ProjectPage = () => {
     const size = useContext(ResponsiveContext);
 
     return (
-        <Page data-testid="projectsPage" kind="full">
+        <Page data-testid="ossPage" kind="full">
             <PageContent>
                 <Grid pad="small" gap="small" { ...getResponsiveGridProps(size) }>
                     { projects.map((p, i) => <ProjectCard key={ `project_${i}` } project={ p } />) }

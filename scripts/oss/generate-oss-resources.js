@@ -1,4 +1,4 @@
-const projects = require('./projects');
+const projects = require('./oss-projects');
 
 const githubRepoApiUrl = "https://api.github.com/repos";
 
@@ -34,7 +34,7 @@ async function enrichProject(project) {
 }
 
 async function generateProjectResources(resourceWriter) {
-    return Promise.all(projects.map(enrichProject)).then(projectsData => resourceWriter("projects.json", JSON.stringify(projectsData)));
+    return Promise.all(projects.map(enrichProject)).then(projectsData => resourceWriter("oss-projects.json", JSON.stringify(projectsData)));
 }
 
 module.exports = generateProjectResources;
