@@ -51,7 +51,7 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  ({ url }) => url.origin === self.location.origin && (url.pathname.endsWith('.png') || url.pathname.endsWith('.svg')), // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: 'images',
     plugins: [
@@ -59,19 +59,6 @@ registerRoute(
       // least-recently used images are removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
-  })
-);
-
-// Cache calls to Github API to prevent rate limiting issues
-registerRoute(
-  new RegExp('^https://api.github.com/'),
-  new CacheFirst({
-    cacheName: 'github-api-cache',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [200],
-      })
-    ]
   })
 );
 
