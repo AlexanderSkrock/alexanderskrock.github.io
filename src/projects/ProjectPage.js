@@ -1,11 +1,8 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 import { Grid, Page, PageContent, ResponsiveContext } from "grommet";
 
 import ProjectCard from "./ProjectCard";
-
-import professionalProjects from "./professionalProjects";
-import maintainerProjects from "./maintainerProjects";
-import contributorProjects from "./contributorProjects";
+import projects from "../generated/projects.json";
 
 const getResponsiveGridProps = (size) =>  {
     switch (size) {
@@ -31,7 +28,6 @@ const getResponsiveGridProps = (size) =>  {
 
 const ProjectPage = () => {
     const size = useContext(ResponsiveContext);
-    const projects = useMemo(() => [...professionalProjects, ...maintainerProjects, ...contributorProjects], []);
 
     return (
         <Page data-testid="projectsPage" kind="full">
