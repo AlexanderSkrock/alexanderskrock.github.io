@@ -1,6 +1,7 @@
 import React from "react";
-import { Avatar, Box, Button, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
-import { Link } from "grommet-icons";
+import { Avatar, Box, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
+
+import Link from "../../components/Link";
 
 const getHeader = ({ icon, name }) => icon
  ? (
@@ -32,10 +33,9 @@ const getTags = ({ tags }) => {
     if (!links || links.length < 1) {
         return null;
     }
-    return links.map((link, idx) => {
-        const IconComponent = link.icon || Link;
-        return <Button key={ `link_${idx}` } icon={ <IconComponent color="plain" /> } href={ link.url || link } hoverIndicator />;
-    });
+    return links.map((link, idx) => (
+        <Link key={ `link_${idx}` } icon={ link.icon } url={ link.url || link }/>
+    ));
  }
 
 const ProjectCard = ({ project }) => (
