@@ -1,4 +1,4 @@
-const { CAMUNDA_MODELER_TAG, NODE_TAG, JAVA_TAG, JS_TAG, JSON_SCHEMA_TAG } = require("../tags");
+const { CAMUNDA_MODELER_TAG, NODE_TAG, JAVA_TAG, JS_TAG, JSON_SCHEMA_TAG } = require("../constants/tags");
 
 const maintainerProjects = [
     {
