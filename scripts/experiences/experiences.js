@@ -6,6 +6,7 @@ const experiences = [
         to: "September 2020",
         organization: {
             name: "Unversity of Economics and Law Berlin",
+            url: "https://www.hwr-berlin.de",
             icon: "https://www.hwr-berlin.de/typo3conf/ext/hwrbase/Resources/Public/Images/hwr-logo-alt.svg",
         },
         roles: [
@@ -17,6 +18,7 @@ const experiences = [
         to: null,
         organization: {
             name: "data experts gmbh",
+            url: "https://www.data-experts.de",
             icon: "https://www.data-experts.de/wp-content/themes/data-experts/img/data-experts-logo.svg",
         },
         roles: [

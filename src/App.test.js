@@ -31,7 +31,7 @@ test('renders under construction info for root page with slash', () => {
 });
 
 test('renders experience info for professional experience page', () => {
-  renderRoute("/experience");
+  renderRoute("/experiences");
 
   const grid = screen.getByTestId("professionalExperiencesPage");
   expect(grid).toBeInTheDocument();

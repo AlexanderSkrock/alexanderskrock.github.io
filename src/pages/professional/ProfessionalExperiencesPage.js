@@ -1,30 +1,9 @@
 import React, { useContext } from "react";
-import { Grid, Page, PageContent, ResponsiveContext } from "grommet";
+import { List, Page, PageContent, ResponsiveContext } from "grommet";
 
-import ProjectCard from "../../components/ProjectCard";
-import projects from "../../config/generated/professional-projects.json";
 
-const getResponsiveGridProps = (size) =>  {
-    switch (size) {
-        case "xsmall":
-        case "small":
-            return {
-                columns: ["full"],
-            };
-        case "medium":
-            return {
-                columns: ["1/2", "1/2"],
-            };
-        case "large":
-            return {
-                columns: ["1/3", "1/3", "1/3"],
-            };
-        default:
-            return {
-                columns: ["1/4", "1/4", "1/4", "1/4"],
-            };
-    }
-}
+import experiences from "../../config/generated/experiences";
+import ExperienceCard from "./ExperienceCard";
 
 const ProfessionalExperiencesPage = () => {
     const size = useContext(ResponsiveContext);
@@ -32,9 +11,11 @@ const ProfessionalExperiencesPage = () => {
     return (
         <Page data-testid="professionalExperiencesPage" kind="full">
             <PageContent>
-                <Grid pad="small" gap="small" { ...getResponsiveGridProps(size) }>
-                    { projects.map((p, i) => <ProjectCard key={ `project_${i}` } project={ p } />) }
-                </Grid>
+                <List data={ experiences }>
+                    {
+                        (experience, index) => <ExperienceCard key={ `experience_${index}` } experience={ experience } />
+                    }
+                </List>
             </PageContent>
         </Page>
     );
