@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Grid, Page, PageContent, ResponsiveContext } from "grommet";
 
 import ProjectCard from "../../components/ProjectCard";
-import projects from "../../config/generated/business-projects.json";
+import projects from "../../config/generated/professional-projects.json";
 
 const getResponsiveGridProps = (size) =>  {
     switch (size) {
@@ -26,11 +26,11 @@ const getResponsiveGridProps = (size) =>  {
     }
 }
 
-const BusinessPage = () => {
+const ProfessionalExperiencesPage = () => {
     const size = useContext(ResponsiveContext);
 
     return (
-        <Page data-testid="businessPage" kind="full">
+        <Page data-testid="professionalExperiencesPage" kind="full">
             <PageContent>
                 <Grid pad="small" gap="small" { ...getResponsiveGridProps(size) }>
                     { projects.map((p, i) => <ProjectCard key={ `project_${i}` } project={ p } />) }
@@ -40,4 +40,4 @@ const BusinessPage = () => {
     );
 }
 
-export default BusinessPage;
+export default ProfessionalExperiencesPage

@@ -30,10 +30,10 @@ test('renders under construction info for root page with slash', () => {
   expect(elements[0]).toBeInTheDocument();
 });
 
-test('renders business projects info for business page', () => {
-  renderRoute("/business");
+test('renders experience info for professional experience page', () => {
+  renderRoute("/experience");
 
-  const grid = screen.getByTestId("businessPage");
+  const grid = screen.getByTestId("professionalExperiencesPage");
   expect(grid).toBeInTheDocument();
 });
 
