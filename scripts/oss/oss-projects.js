@@ -1,14 +1,6 @@
-const { CAMUNDA_MODELER_TAG, NODE_TAG, JAVA_TAG, JS_TAG, JSON_SCHEMA_TAG } = require("../constants/tags");
+const { CAMUNDA_MODELER_TAG, JAVA_TAG, JS_TAG, JSON_SCHEMA_TAG } = require("../constants/tags");
 
-const maintainerProjects = [
-    {
-        name: "Camunda Modeler Provisioner",
-        github: "https://github.com/AlexanderSkrock/camunda-modeler-provisioner",
-        tags: [ CAMUNDA_MODELER_TAG, NODE_TAG ]
-    },
-]
-
-const contributorProjects = [
+const ossProjects = [
     {
         name: "Open Rewrite",
         github: "https://github.com/openrewrite/rewrite",
@@ -31,6 +23,4 @@ const contributorProjects = [
     }
 ];
 
-const projects = [ ...maintainerProjects, ...contributorProjects ];
-
-module.exports = projects;
+module.exports = ossProjects;
