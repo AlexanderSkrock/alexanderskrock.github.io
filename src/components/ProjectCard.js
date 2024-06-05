@@ -48,10 +48,10 @@ const ProjectCard = ({ project }) => (
         </CardBody>
         <CardFooter pad={{horizontal: "small"}} background="light-2">
             <Box direction="row" pad="small" justify="between" fill>
-                <Box direction="row" gap="xsmall" wrap>
+                <Box direction="row" wrap gap="xsmall">
                     { getTags(project) }
                 </Box>
-                <Box direction="row" gap="small" align="center">
+                <Box direction="row" wrap gap="small" align="center">
                     { getLinks(project) }
                 </Box>
             </Box>
