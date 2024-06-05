@@ -1,7 +1,8 @@
-import React from "react";
-import { Avatar, Box, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text } from "grommet";
+import React, { useCallback, useState } from "react";
+import { Avatar, Box, Card, CardBody, CardHeader, CardFooter, Paragraph, Tag, Text, Layer, Button } from "grommet";
 
 import Link from "./Link";
+import { Close } from "grommet-icons";
 
 const getHeader = ({ icon, name }) => icon
  ? (
@@ -12,9 +13,9 @@ const getHeader = ({ icon, name }) => icon
  )
  : <Text weight="bold"> { name } </Text>;
 
- const getBody = ({ description }) => typeof description === 'string' || description instanceof String
+ const getBody = ({ description }, full = false) => typeof description === 'string' || description instanceof String
     ? (
-        <Paragraph maxLines="5">
+        <Paragraph maxLines={ full ? 0 : 5 }>
             { description }
         </Paragraph>
     )
@@ -29,34 +30,66 @@ const getTags = ({ tags }) => {
     });
 }
 
- const getLinks = ({ links }) => {
+const getLinks = ({ links }) => {
     if (!links || links.length < 1) {
         return null;
     }
     return links.map((link, idx) => (
         <Link key={ `link_${idx}` } icon={ link.icon } url={ link.url || link }/>
     ));
- }
+}
 
-const ProjectCard = ({ project }) => (
+const ProjectSummaryCard = ({ project, openPopup }) => (
     <Card>
         <CardHeader pad="medium">
             { getHeader(project) }
         </CardHeader>
-        <CardBody pad="medium">
+        <CardBody pad="medium" onClick={ openPopup } focusIndicator={ false }>
             { getBody(project) }
         </CardBody>
         <CardFooter pad={{horizontal: "small"}} background="light-2">
             <Box direction="row" pad="small" justify="between" fill>
-                <Box direction="row" gap="xsmall" wrap>
+                <Box direction="row" wrap gap="xsmall">
                     { getTags(project) }
                 </Box>
-                <Box direction="row" gap="small" align="center">
+                <Box direction="row" wrap gap="small" align="center">
                     { getLinks(project) }
                 </Box>
             </Box>
         </CardFooter>
     </Card>
 );
+
+const ProjectDetailLayer = ({ project, dismissPopup }) => (
+    <Layer onEsc={ dismissPopup } onClickOutside={ dismissPopup }>
+        <Box pad="small" gap="small">
+            { getHeader(project) }  
+            { getBody(project, true) }
+            <Button icon={ <Close /> } label="Close" onClick={ dismissPopup } />
+        </Box>
+    </Layer>
+);
+
+
+const ProjectCard = ({ project }) => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    const openPopup = useCallback(() => {
+        setShowPopup(true);
+    }, [setShowPopup]);
+
+    const dismissPopup = useCallback(() => {
+        setShowPopup(false);
+    }, [setShowPopup]);
+
+    return (
+        <>
+            <ProjectSummaryCard project={ project } openPopup={ openPopup } />
+            {
+                showPopup && <ProjectDetailLayer project={ project } dismissPopup={ dismissPopup } />
+            }
+        </>
+    );
+}
 
 export default ProjectCard;

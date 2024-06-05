@@ -1,4 +1,4 @@
-const { enrichProject } = require('../projects');
+const { enrichProject } = require('../util/projectUtil');
 
 const projects = require('./oss-projects');
 
