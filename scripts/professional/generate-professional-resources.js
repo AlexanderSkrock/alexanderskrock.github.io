@@ -16,7 +16,7 @@ async function enrichExperience(experience) {
 }
 
 async function generateProjectResources(resourceWriter) {
-    return Promise.all(experiences.map(enrichExperience)).then(experienceData => resourceWriter("experiences.json", JSON.stringify(experienceData)));
+    return Promise.all(experiences.map(enrichExperience)).then(experienceData => resourceWriter("professional-experiences.json", JSON.stringify(experienceData)));
 }
 
 module.exports = generateProjectResources;

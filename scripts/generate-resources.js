@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const generateExperienceResources = require('./experiences/generate-experiences-resources');
+const generateProfessionalResources = require('./professional/generate-professional-resources');
 const generateOssProjectResources = require('./oss/generate-oss-resources');
 
 function writeToResourceFile(fileName, data) {
@@ -13,5 +13,5 @@ function writeToResourceFile(fileName, data) {
       }
 }
 
-generateExperienceResources(writeToResourceFile);
+generateProfessionalResources(writeToResourceFile);
 generateOssProjectResources(writeToResourceFile);

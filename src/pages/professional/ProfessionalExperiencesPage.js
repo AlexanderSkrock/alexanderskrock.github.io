@@ -2,7 +2,7 @@ import React from "react";
 import { List, Page, PageContent } from "grommet";
 
 
-import experiences from "../../config/generated/experiences";
+import experiences from "../../config/generated/professional-experiences";
 import ExperienceCard from "./ExperienceCard";
 
 const ProfessionalExperiencesPage = () => (

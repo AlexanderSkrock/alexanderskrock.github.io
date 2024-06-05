@@ -24,7 +24,7 @@ const Root = () => {
             <Header sticky="scrollup" ref={ consumeHeader }>
                 <Nav direction="row" fill="horizontal" justify="around" pad="small" background="brand">
                     <Anchor href="/" icon={ <HomeRounded />} hoverIndicator />
-                    <Anchor href="/experiences" icon={ <Briefcase />} hoverIndicator />
+                    <Anchor href="/professional" icon={ <Briefcase />} hoverIndicator />
                     { /* currently the github icon is sufficient */ }
                     <Anchor href="/oss" icon={ <Github />} hoverIndicator />
                     <Anchor href="/contact" icon={ <Contact /> } hoverIndicator />
