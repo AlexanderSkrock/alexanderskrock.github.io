@@ -23,12 +23,12 @@ const experiences = [
             },
             {
                 name: "Studyproject: Implement and deploy a SLAM algorithm",
-                description: "In the scope of this project, me and two other students got to know the modular robot system called VolksBot. We applied our knowledge about SLAM algorithms to implement such an algorithm and integrate it with the robot's sensors to create a robot which can autonomously explore unknown rooms and keep track of it in form of a map.",
+                description: "In the scope of this project, me and two other students got to know the modular robot system called VolksBot. We applied our knowledge about SLAM algorithms to implement such an algorithm and integrate it with the robot's sensors to create a robot which can autonomously explore unknown rooms. The state of exploration was stored in form of a map.",
                 tags: [ C_SHARP_TAG ],
             },
             {
                 name: "Studyproject: Compiler engineering",
-                description: "In the scope of this project, I developed a client-server application to write and test regexes as well as defining and applying rues for tokenization of text inputs. The whole implementation is neither based on any library nor using the java built-in regex utility, but instead uses self-implemented automatas.",
+                description: "In the scope of this project, I developed a client server application to write and test regexes as well as defining and applying rules for tokenization of text inputs. The whole implementation is neither based on any library nor using the java built-in regex utility, but instead uses self-implemented automatas.",
                 tags: [ JAVA_TAG, JS_TAG, SPRING_BOOT_TAG, REACT_TAG ],
                 links: [
                     "https://github.com/AlexanderSkrock/compiler",
