@@ -7,6 +7,16 @@ const ossProjects = [
         tags: [ JAVA_TAG ],
     },
     {
+        name: "properties-panel",
+        github: "https://github.com/bpmn-io/properties-panel",
+        tags: [ CAMUNDA_MODELER_TAG, JS_TAG ]
+    },
+    {
+        name: "bpmn-js-properties-panel",
+        github: "https://github.com/bpmn-io/bpmn-js-properties-panel",
+        tags: [ CAMUNDA_MODELER_TAG, JS_TAG ]
+    },
+    {
         name: "BPMN JS Element Templates",
         github: "https://github.com/bpmn-io/bpmn-js-element-templates",
         tags: [ CAMUNDA_MODELER_TAG, JS_TAG ]
