@@ -1,4 +1,4 @@
-const { JAVA_TAG, SPRING_BOOT_TAG, JS_TAG, CAMUNDA_7_TAG, REACT_TAG, ANGULAR_TAG, NODE_TAG, C_SHARP_TAG } = require("../constants/tags");
+    const { JAVA_TAG, SPRING_BOOT_TAG, JS_TAG, CAMUNDA_7_TAG, REACT_TAG, ANGULAR_TAG, NODE_TAG, C_SHARP_TAG } = require("../constants/tags");
 
 const experiences = [
     {
@@ -7,7 +7,7 @@ const experiences = [
         organization: {
             name: "Unversity of Economics and Law Berlin",
             url: "https://www.hwr-berlin.de",
-            icon: "https://www.hwr-berlin.de/typo3conf/ext/hwrbase/Resources/Public/Images/hwr-logo-alt.svg",
+            icon: "/companies/hwr.svg",
         },
         roles: [
             "Dual Student of Informatics",
@@ -44,7 +44,7 @@ const experiences = [
         organization: {
             name: "data experts gmbh",
             url: "https://www.data-experts.de",
-            icon: "https://www.data-experts.de/wp-content/themes/data-experts/img/data-experts-logo.svg",
+            icon: "/companies/data-experts.svg",
         },
         roles: [
             "Software Engineer",
@@ -56,7 +56,7 @@ const experiences = [
                 description: "Mit X-OUT werden Sie das unternehmensweite Output Management konsolidieren, vereinfachen, vereinheitlichen.",
                 icon: "/projects/xout.svg",
                 links: [ "https://www.x-out.de/" ],
-                tags: [ JAVA_TAG, SPRING_BOOT_TAG ],
+                tags: [ JAVA_TAG, JS_TAG, SPRING_BOOT_TAG, REACT_TAG ],
             },
             {
                 name: "X-OUT Web TOBI",
@@ -65,7 +65,7 @@ const experiences = [
                 links: [ "https://www.x-out.de/" ],
                 tags: [ JAVA_TAG, JS_TAG, SPRING_BOOT_TAG, CAMUNDA_7_TAG, REACT_TAG ],
             },
-        ], 
+        ],
     },
 ];
 
